@@ -1,0 +1,79 @@
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ESP:Toggle(false)
+ESP.Players = false 
+ESP.Tracers = false 
+ESP.Boxes = false 
+ESP.Names = false
+
+-- Med safes
+for i,v in pairs(game:GetService("Workspace").Map.BredMakurz:GetDescendants()) do
+	if string.find(v.Name,"MediumSafe") then 
+	    if v:FindFirstChild("MainPart") then 
+            ESP:Add(v.MainPart, {
+                Name = "Medium Safe",
+                IsEnabled = "mediumSafe",
+                Color = Color3.fromRGB(139, 203, 255)
+            })
+        end 
+	end 
+end
+
+-- Small safes
+for i,v in pairs(game:GetService("Workspace").Map.BredMakurz:GetDescendants()) do
+	if string.find(v.Name,"SmallSafe") then 
+	    if v:FindFirstChild("MainPart") then 
+            ESP:Add(v.MainPart, {
+                Name = "Small Safe",
+                IsEnabled = "smallSafe",
+                Color = Color3.fromRGB(228, 236, 243)
+            })
+        end 
+	end 
+end
+
+-- Registers
+for i,v in pairs(game:GetService("Workspace").Map.BredMakurz:GetDescendants()) do
+    if string.find(v.Name,"Register") then 
+        if v:FindFirstChild("MainPart") then 
+            ESP:Add(v.MainPart, {
+                Name = "Register",
+                IsEnabled = "registerSafe",
+                Color = Color3.fromRGB(255, 0, 128)
+            })
+        end 
+    end 
+end
+
+-- ATMs 
+for i,v in pairs(game:GetService("Workspace").Map.ATMz:GetDescendants()) do
+    if string.find(v.Name,"ATM") then 
+        if v:FindFirstChild("MainPart") then 
+            ESP:Add(v.MainPart, {
+                Name = "ATM",
+                IsEnabled = "atmPart",
+                Color = Color3.fromRGB(0, 255, 42)
+            })
+        end 
+    end 
+end
+
+-- Dealers
+for i,v in pairs(game:GetService("Workspace").Map.Shopz:GetDescendants()) do
+    if string.find(v.Name,"Dealer") then 
+        if v:FindFirstChild("MainPart") then 
+            ESP:Add(v.MainPart, {
+                Name = "Dealer",
+                IsEnabled = "dealerStore",
+                Color = Color3.fromRGB(255, 189, 128)
+            })
+        end 
+    end 
+end
+
+-- Scraps
+ESP:AddObjectListener(game:GetService("Workspace").Filter.SpawnedPiles, {
+    Type = "Model",
+    CustomName = "Scrap",
+    Color = Color3.fromRGB(216, 255, 164),
+    IsEnabled = "scrapPart"
+})
