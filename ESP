@@ -1,5 +1,5 @@
 local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
-ESP:Toggle(false)
+ESP:Toggle(true)
 ESP.Players = false 
 ESP.Tracers = false 
 ESP.Boxes = false 
